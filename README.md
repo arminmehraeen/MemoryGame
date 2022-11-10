@@ -1,4 +1,4 @@
-# memory_game
+# Memory Game
 
 Memory game flutter project with Bloc .
 
