@@ -60,7 +60,7 @@ class GameBloc extends Bloc<GameEvent, GameState> {
               state.cards.map((e) =>
               e.id == temp.first.id  ? temp.first : e.id == temp.last.id ? temp.last : e).toList();
           emit(Game(cards: cards));
-          await Future.delayed(const Duration(milliseconds: 100));
+          await Future.delayed(const Duration(milliseconds: 500));
 
           if (cards.where((element) => !element.isCompleted).isEmpty) emit(GameFinished(result: true));
         }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:memory_game/bloc/game_bloc.dart';
 import 'package:memory_game/screen/p_menu.dart';
+import 'package:memory_game/screen/p_result.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
             primarySwatch: Colors.blue,
-            primaryColor: const Color(0xFF142550),
+            primaryColor: const Color(0xFF1573AA),
             appBarTheme: const AppBarTheme(
               color: Color(0xFF142550) ,
             )

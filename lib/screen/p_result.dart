@@ -1,3 +1,4 @@
+import 'package:circle_button/circle_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,28 +14,94 @@ class ResultScreen extends StatelessWidget {
     return Scaffold(
       body: BlocConsumer<GameBloc, GameState>(builder: (context, state) {
         if (state is GameFinished) {
-          return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text("Result ${ state.result.toString() }"),
-                const Divider() ,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(onPressed: () => context
-                        .read<GameBloc>()
-                        .add(GameRestart(isRestart: true)), child: const Icon(Icons.refresh)) ,
-                    const SizedBox(width: 10,) ,
-                    ElevatedButton(
-                        onPressed: () => context
-            .read<GameBloc>()
-            .add(GameRestart(isRestart: false)), child: const Icon(Icons.home)) ,
-                  ],
-                )
-              ],
-            ),
+          return Column(
+            children: [
+              Expanded(flex: 4,child: Container(
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      state.result ?
+                      Column(
+                        children:  [
+                          Text(
+                            "You Won",
+                            style: TextStyle(fontWeight: FontWeight.bold ,
+                                color: Theme.of(context).primaryColor , fontSize: 30),
+                          ),
+                          Text(
+                            "Your work was great",
+                            style: TextStyle(fontWeight: FontWeight.normal ,
+                                color: Theme.of(context).primaryColor , fontSize: 20),
+                          ),
+                        ],
+                      ) : Column(
+                        children:  [
+                          Text(
+                            "You Lose",
+                            style: TextStyle(fontWeight: FontWeight.bold ,
+                                color: Theme.of(context).primaryColor  , fontSize: 30),
+                          ),
+                          Text(
+                            "Try your luck again",
+                            style: TextStyle(fontWeight: FontWeight.normal ,
+                                color: Theme.of(context).primaryColor, fontSize: 20),
+                          ),
+                        ],
+                      ) ,
+
+
+                    ],
+                  ),
+                ),
+              ),) ,
+              Expanded(flex: 3,child: Container(
+                decoration: const BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(100),
+                      topRight: Radius.circular(100),
+                    )),
+                child: Center(
+                  child:  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircleButton(
+                        onTap: () => context
+                            .read<GameBloc>()
+                            .add(GameRestart(isRestart: true)) ,
+                        width: 40.0,
+                        height: 40.0,
+                        borderColor: Colors.white,
+                        borderStyle: BorderStyle.solid,
+                        backgroundColor: Colors.white,
+                        child: Icon(
+                          Icons.refresh,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
+                      const SizedBox(width: 10,) ,
+                      CircleButton(
+                        onTap: () => context
+                            .read<GameBloc>()
+                            .add(GameRestart(isRestart: false)) ,
+                        width: 40.0,
+                        height: 40.0,
+                        borderColor: Colors.white,
+                        borderStyle: BorderStyle.solid,
+                        backgroundColor: Colors.white,
+                        child: Icon(
+                          Icons.home,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
+
+                    ],
+                  ),
+                ),
+              ) ,) ,
+            ],
           );
         }
         return Container() ;
@@ -43,7 +110,7 @@ class ResultScreen extends StatelessWidget {
           Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => GameScreen(),
+                builder: (context) => const GameScreen(),
               ));
         }
 
