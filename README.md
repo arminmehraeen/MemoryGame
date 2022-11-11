@@ -1,6 +1,6 @@
 # Memory Game
 
-Memory game flutter project with Bloc .
+Memory game flutter project with Bloc pattern .
 
 <div>
   <img src="https://github.com/arminmehraeen/MemoryGame/blob/master/github/logo.svg" width="100">
