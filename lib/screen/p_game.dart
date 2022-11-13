@@ -21,6 +21,7 @@ class GameScreen extends StatelessWidget {
       body: BlocConsumer<GameBloc, GameState>(
           listener: (context, state) {
             if (state is GameFinished) {
+              controller.dispose() ;
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
@@ -97,4 +98,8 @@ class GameScreen extends StatelessWidget {
           }),
     );
   }
+
+
 }
+
+
