@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:memory_game/model/m_game_card.dart';
+import 'package:memory_game/model/game_card_model.dart';
 import 'package:meta/meta.dart';
 
 part 'game_event.dart';

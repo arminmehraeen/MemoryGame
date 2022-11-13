@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:memory_game/screen/p_menu.dart';
+import 'package:memory_game/view/menu/screen/menu_screen.dart';
 
 import 'bloc/game_bloc.dart';
 

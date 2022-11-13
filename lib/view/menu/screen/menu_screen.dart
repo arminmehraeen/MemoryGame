@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:memory_game/bloc/game_bloc.dart';
-import 'package:memory_game/screen/p_game.dart';
+import 'package:memory_game/view/game/screen/game_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({Key? key}) : super(key: key);

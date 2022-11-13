@@ -4,7 +4,8 @@ import 'package:flutter_countdown_timer/countdown_timer_controller.dart';
 import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:memory_game/bloc/game_bloc.dart';
-import 'package:memory_game/screen/p_result.dart';
+import 'package:memory_game/view/result/screen/result_screen.dart';
+import 'package:memory_game/widget/bad_state_widget.dart';
 
 class GameScreen extends StatelessWidget {
   const GameScreen({Key? key}) : super(key: key);
@@ -94,7 +95,7 @@ class GameScreen extends StatelessWidget {
                 ),
               );
             }
-            return Container();
+            return const BadStateWidget();
           }),
     );
   }

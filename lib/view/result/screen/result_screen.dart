@@ -3,8 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:memory_game/bloc/game_bloc.dart';
-import 'package:memory_game/screen/p_game.dart';
-import 'package:memory_game/screen/p_menu.dart';
+import 'package:memory_game/view/game/screen/game_screen.dart';
+import 'package:memory_game/view/menu/screen/menu_screen.dart';
+
+import '../../../widget/bad_state_widget.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({Key? key}) : super(key: key);
@@ -104,7 +106,7 @@ class ResultScreen extends StatelessWidget {
             ],
           );
         }
-        return Container() ;
+        return const BadStateWidget();
       }, listener: (context, state) {
         if (state is Game) {
           Navigator.pushReplacement(
