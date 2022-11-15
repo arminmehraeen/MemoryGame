@@ -13,7 +13,7 @@ class GameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CountdownTimerController controller =
-    CountdownTimerController(endTime: DateTime.now().millisecondsSinceEpoch + 1000 * 60 , onEnd: () {
+    CountdownTimerController(endTime: DateTime.now().millisecondsSinceEpoch + 1000 * 20 , onEnd: () {
       context
           .read<GameBloc>()
           .add(GameTimeOut());

@@ -1,0 +1,4 @@
+enum CustomContainerBorderSide {
+  top ,
+  bottom
+}
